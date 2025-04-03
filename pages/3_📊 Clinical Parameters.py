@@ -26,7 +26,7 @@ severity_order = ["Severe", "Mild", "Moderate"]
 df["Severity"] = pd.Categorical(df["Severity"], categories=severity_order, ordered=True)
 
 # Convert categorical columns to strings
-categorical_cols = ["Gender", "Severity", "Age", "Collection_date"]  # Adjust if needed
+categorical_cols = ["Age","Gender", "Severity","Collection_date"]  # Adjust if needed
 df[categorical_cols] = df[categorical_cols].astype(str)
 
 # Streamlit App Layout
@@ -35,7 +35,7 @@ st.title("Interactive Data Visualization")
 # Dropdown to Select Plot Type
 plot_type = st.selectbox(
     "Select Plot Type", 
-    ["Boxplot", "Bar Plot", "Histogram", "Pie Chart", "Sunburst Chart"]
+    ["Bar Plot","Boxplot", "Histogram", "Pie Chart", "Sunburst Chart"]
 )
 
 # Dropdown to Select X-axis (only for relevant plots)
