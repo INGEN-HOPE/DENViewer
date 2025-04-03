@@ -3,27 +3,21 @@ import pandas as pd
 import plotly.graph_objects as go
 import numpy as np
 import plotly.express as px
+import streamlit_shadcn_ui as ui
 
 # Set Streamlit page config
 st.set_page_config(
-    page_title="DENViewer ", #Decoding 
+    page_title="DENViewer",
     page_icon="🧫",
     layout="wide",
     initial_sidebar_state="auto",
-    menu_items={
-        "Get Help": None,
-        "Report a bug": None,
-        "About": None,
-    }    
 )
 
-# Add logo (replace with your image path)
+# Sidebar: Add logo and title
 st.sidebar.image("pages/images/lab_logo.png", use_container_width=True)
-# Add Dashboard Name
 st.sidebar.markdown('<p class="sidebar-title">DENViewer</p>', unsafe_allow_html=True)
 
-
-# Sidebar customization
+# Sidebar styling
 st.sidebar.markdown(
     """
     <style>
@@ -31,41 +25,69 @@ st.sidebar.markdown(
             font-size: 24px;
             font-weight: bold;
             text-align: center;
-            color: "white";
+            color: white;
             margin-bottom: 10px;
-        }
-        .sidebar-logo {
-            display: block;
-            margin: 0 auto;
-            width: 150px;  /* Adjust size as needed */
-            border-radius: 10px;
         }
     </style>
     """,
     unsafe_allow_html=True
 )
-# Optional: Add a separator for aesthetics
+
 st.sidebar.markdown("---")
 
+# Load Data
+try:
+    df = pd.read_csv('pages/files/all_Mutations.csv')
+except FileNotFoundError:
+    st.error("File 'all_Mutations.csv' not found. Please check the file path.")
+    st.stop()
 
+# Add a sidebar option to select the year (assuming you have a 'Year' column)
+selected_year = st.sidebar.selectbox("Select Year", df["Year"].unique())
 
-# Load the data
-df = pd.read_csv('pages/files/all_Mutations.csv')
+# Filter data based on selected year
+df_selected_year = df[df["Year"] == selected_year]
 
-# Add small jitter to the position
+# Compute statistics
+total_mutations = len(df_selected_year)
+synonymous_mutations = len(df_selected_year[df_selected_year["Mutation Type"] == "Synonymous Variant"])
+unique_positions = df_selected_year["Position"].nunique()
+
+# Layout for metrics (4 cards in a row)
+col1, col2, col3, col4 = st.columns(4)
+
+with col1:
+    ui.metric_card(title="Total Mutations", content=total_mutations, description="Count of all mutations")
+
+with col2:
+     ui.metric_card(title="Synonymous Mutations", content=synonymous_mutations, description="Mutations that do not change amino acid")
+
+with col3:
+     ui.metric_card(title="Unique Positions", content=unique_positions, description="Distinct mutation positions in the genome")
+
+with col4:
+     ui.metric_card(title="Selected Year", content=selected_year, description="Year selected for mutation statistics")
+
+# Ensure numeric columns
+df['Position'] = pd.to_numeric(df['Position'], errors='coerce')
+df['Frequency'] = pd.to_numeric(df['Frequency'], errors='coerce')
+
+# Drop rows with NaN values in essential columns
+df.dropna(subset=['Position', 'Frequency'], inplace=True)
+
+# Add small jitter to position
 df['Position Jittered'] = df['Position'] + np.random.uniform(-0.5, 0.5, size=len(df))
 
 # Define mutation types and colors
 mutation_types = df['Mutation Type'].unique()
 colors = px.colors.qualitative.Set1[:len(mutation_types)]
 
-# Create individual DataFrames for each mutation type
+# Create a dictionary of DataFrames for each mutation type
 filtered_dataframes = {mt: df[df['Mutation Type'] == mt] for mt in mutation_types}
 
-# Base figure creation function for lollipop plot without connecting lines
+# Function to create scatter plots (lollipop chart)
 def create_figure(data, color):
     return [
-        # Add sticks (vertical lines) for lollipop
         go.Scatter(
             x=data['Position Jittered'],
             y=data['Frequency'],
@@ -74,13 +96,12 @@ def create_figure(data, color):
             hoverinfo='skip',
             showlegend=False
         ),
-        # Add markers at the top of the sticks
         go.Scatter(
             x=data['Position Jittered'],
             y=data['Frequency'],
             mode='markers',
             marker=dict(
-                size= data['Frequency'] * 35,  # Scale size for visibility
+                size=np.maximum(data['Frequency'] * 10, 5),   # Scale marker size
                 color=color,
                 opacity=0.6
             ),
@@ -94,20 +115,20 @@ def create_figure(data, color):
                 f"Severe Frequency: {row['Severe Frequency']}"
                 for index, row in data.iterrows()
             ],
-            name=data['Mutation Type'].iloc[0]  # Use Mutation Type for legend
+            name=data['Mutation Type'].iloc[0]  
         )
     ]
 
-# Initialize figure with all data
+# Initialize figure
 fig = go.Figure()
 
-# Add lollipop traces for all mutation types
+# Add traces for each mutation type
 for mt, color in zip(mutation_types, colors):
     traces = create_figure(filtered_dataframes[mt], color)
     for trace in traces:
         fig.add_trace(trace)
 
-# Add shaded regions and gene labels
+# Define gene regions
 gene_ranges = [
     {'start': 1, 'end': 99, 'gene': '5 UTR'},
     {'start': 100, 'end': 441, 'gene': 'C'},
@@ -123,6 +144,7 @@ gene_ranges = [
     {'start': 10276, 'end': 11000, 'gene': '3 UTR'}
 ]
 
+# Add shaded regions and labels
 for gene in gene_ranges:
     fig.add_shape(
         type='rect',
@@ -141,14 +163,13 @@ for gene in gene_ranges:
         align='center'
     )
 
-# Define dropdown buttons
+# Create dropdown buttons
 dropdown_buttons = [
     {'label': 'All Mutation Types', 'method': 'update',
      'args': [{'visible': [True] * (2 * len(mutation_types))},
-              {'title': 'All Mutation Types'}]},
+              {'title': 'All Mutation Types'}]}
 ]
 
-# Add dropdown options for each mutation type
 for i, mt in enumerate(mutation_types):
     visibility = [False] * (2 * len(mutation_types))
     visibility[2 * i] = True
@@ -160,7 +181,7 @@ for i, mt in enumerate(mutation_types):
                  {'title': mt}]
     })
 
-# Add reset button
+# Reset button
 dropdown_buttons.append({
     'label': 'Reset Filter',
     'method': 'update',
@@ -168,7 +189,7 @@ dropdown_buttons.append({
              {'title': 'Reset Filter'}]
 })
 
-# Update layout with dropdown menus and legend
+# Update figure layout
 fig.update_layout(
     updatemenus=[{
         'buttons': dropdown_buttons,
@@ -178,29 +199,25 @@ fig.update_layout(
         'xanchor': 'right',
         'y': -0.2,
         'yanchor': 'bottom',
-        'pad': {'r': 10, 't': 10}
     }],
-    legend={
-        'orientation': "h",
-        'x': 0, 'y': -0.3,
-        'title': "Mutation Type",
-        'traceorder': "normal",
-        'itemsizing': "constant",
-        'font': {'size': 14},
-},
+    legend=dict(
+        orientation="h",
+        x=0, y=-0.3,
+        title="Mutation Type",
+        traceorder="normal",
+        itemsizing="constant",
+        font=dict(size=14),
+    ),
     margin=dict(l=40, r=40, t=40, b=150),
     height=600,
     plot_bgcolor='white',
     xaxis=dict(title='Position', showgrid=False),
-    yaxis=dict(title='Mutation Frequency',showgrid=False),
+    yaxis=dict(title='Mutation Frequency', showgrid=False),
     title='Dengue Virus Mutation Frequency'
 )
 
-# Display the plot
-fig.show()
-
-
-
+# Display in Streamlit
+st.plotly_chart(fig, use_container_width=True)
 
 # Footer
 st.markdown(
