@@ -15,6 +15,7 @@ st.sidebar.image("pages/images/lab_logo.png", use_container_width=True)
 st.sidebar.markdown('<p class="sidebar-title">DENViewer</p>', unsafe_allow_html=True)
 st.sidebar.markdown("---")
 
+
 # Load Data
 data_file = "pages/files/all_demographics.csv"  # Update the path if needed
 df = pd.read_csv(data_file)
@@ -32,6 +33,20 @@ df[categorical_cols] = df[categorical_cols].astype(str)
 # Streamlit App Layout
 st.title("Interactive Data Visualization")
 
+st.markdown(
+        """
+        <p class='sub-header' style='text-align: justify;'>
+        This page provides an interactive platform to explore key clinical parameters related to dengue surveillance. By analyzing patient demographics, disease severity, and other clinical indicators, users can gain a deeper understanding of the impact of dengue infections.
+
+        Key Features:
+        Severity Distribution: Visualize how disease severity varies across different patient groups.
+
+        Age and Gender Trends: Examine how age and gender influence clinical outcomes.
+
+        Clinical Insights: Analyze key clinical parameters to identify patterns and associations.</p>
+        """,
+        unsafe_allow_html=True
+    )
 # Dropdown to Select Plot Type
 plot_type = st.selectbox(
     "Select Plot Type", 
