@@ -35,7 +35,7 @@ st.title("Interactive Data Visualization")
 # Dropdown to Select Plot Type
 plot_type = st.selectbox(
     "Select Plot Type", 
-    ["Bar Plot","Boxplot", "Histogram", "Pie Chart", "Sunburst Chart"]
+    ["Sunburst Chart","Bar Plot","Boxplot", "Histogram", "Pie Chart" ]
 )
 
 # Dropdown to Select X-axis (only for relevant plots)
