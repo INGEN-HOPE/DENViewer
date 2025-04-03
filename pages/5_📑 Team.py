@@ -70,15 +70,13 @@ team_lead = {
 # Team Members
 team_members = [
     {"name": "Priyanka Mehta", "photo": "pages/images/priyanka.jpg", "linkedin": "https://www.linkedin.com/in/priyanka-mehta-92339a355", "twitter": "https://x.com/priyankammehta", "github": "https://github.com/priyankamehta1811"},
-    {"name": "Varsha Ravi", "photo": "", "linkedin": "#", "twitter": "#", "github": "#"},
-    {"name": "Ramakant Mohite", "photo": "", "linkedin": "#", "twitter": "#", "github": "#"},
-    {"name": "M D Imran", "photo": "", "linkedin": "#", "twitter": "#", "github": "#"},
+    {"name": "Varsha Ravi", "photo": "pages/images/varsha.jpg", "linkedin": "https://www.linkedin.com/in/varsha-ravi-818526107", "twitter": "https://twitter.com/varsha_ravi_", "github": "#"},
+    {"name": "M D Imran", "photo": "pages/images/imran.jpg", "linkedin": "#", "twitter": "#", "github": "#"},
+    {"name": "Ramakant Mohite", "photo": "pages/images/rama.jpg", "linkedin": "https://www.linkedin.com/in/ramakant-mohite-42875a212", "twitter": "https://twitter.com/mohite_ramakant", "github": "#"},
     {"name": "Jyoti Soni", "photo": "pages/images/jyoti.jpg", "linkedin": "#", "twitter": "https://x.com/Sonijyoti63", "github": "#"},
     {"name": "Balendu Upmanyu", "photo": "pages/images/Balendu.jpg", "linkedin": "https://www.linkedin.com/in/balendu-upmanyu-64b684217", "twitter": "", "github": "#"},
     {"name": "Keerti Aswin", "photo": "pages/images/Aswin.jpg", "linkedin": "#", "twitter": "https://x.com/keerthic_aswin", "github": "#"},
     {"name": "Raj Rajeshwar Chowdhry", "photo": "pages/images/jyoti.jpg", "linkedin": "#", "twitter": "#", "github": "#"},
-    {"name": "", "photo": "", "linkedin": "#", "twitter": "#", "github": "#"},
-    {"name": "", "photo": "", "linkedin": "#", "twitter": "#", "github": "#"},
 ]
 
 # Custom CSS for Proper Vertical Alignment
@@ -89,7 +87,7 @@ st.markdown(
         .team-name { font-size: 16px; font-weight: bold; margin-top: 8px; }
         .team-lead-title { font-size: 18px; font-weight: bold; color: #0073e6; margin-top: 5px; }
         .social-icons { display: flex; justify-content: left; gap: 1px; margin-top: 8px; }
-        .profile-pic { width: 3000px; height: 300px; border-radius: 50%; object-fit: cover; }
+        .profile-pic { width: 300px; height: 300px; border-radius: 50%; object-fit: cover; }
     .team-lead-social-icons { 
                 display: flex; 
                 justify-content: flex-start; 
@@ -104,17 +102,24 @@ st.markdown(
 st.title("Meet the Team")
 st.markdown("#### Mentor", unsafe_allow_html=True)
 
-# Display Team Lead Separately
-st.markdown('<div class="team-container">', unsafe_allow_html=True)
-st.image(team_lead["photo"], width=300, caption=team_lead["name"], output_format="PNG")
+for i in range(0, len(team_lead), 3):
+    cols = st.columns(3)
+    
+    for j in range(3):
+        if i + j < len(team_lead):
+            member = team_lead[i + j]
+            with cols[j]:
+                # Display Team Lead Separately
+                    st.markdown('<div class="team-container">', unsafe_allow_html=True)
+                    st.image(team_lead["photo"], width=300, caption=team_lead["name"], output_format="PNG")
 
-# Team Lead Social Media Links
-lead_links = [link for link in [team_lead["linkedin"], team_lead["twitter"], team_lead["github"]] if link and link != "#"]
-if lead_links:
-    social_media_icons = SocialMediaIcons(lead_links)
-    social_media_icons.render()
+                    # Team Lead Social Media Links
+                    lead_links = [link for link in [team_lead["linkedin"], team_lead["twitter"], team_lead["github"]] if link and link != "#"]
+                    if lead_links:
+                        social_media_icons = SocialMediaIcons(lead_links)
+                        social_media_icons.render()
 
-st.markdown('</div>', unsafe_allow_html=True)
+                    st.markdown('</div>', unsafe_allow_html=True)
 
 # Horizontal Divider
 st.markdown("---")
@@ -142,6 +147,7 @@ for i in range(0, len(team_members), 3):
                     social_media_icons.render()
 
                 st.markdown('</div>', unsafe_allow_html=True)
+
 
 # Additional information or contact can go here
 st.markdown("""
