@@ -14,7 +14,43 @@ st.set_page_config(
 st.sidebar.image("pages/images/lab_logo.png", use_container_width=True)
 st.sidebar.markdown('<p class="sidebar-title">DENViewer</p>', unsafe_allow_html=True)
 st.sidebar.markdown("---")
+st.sidebar.markdown(
+    """
+    <style>
+        .sidebar-title {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            color: "white";
+            margin-bottom: 10px;
+        }
+        .sidebar-logo {
+            display: block;
+            margin: 0 auto;
+            width: 150px;  /* Adjust size as needed */
+            border-radius: 10px;
+        }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+# Optional: Add a separator for aesthetics
+st.sidebar.markdown("---")
 
+
+# Custom CSS to expand content area
+st.markdown(
+    """
+    <style>
+    .block-container {
+        max-width: 95%;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 # Load Data
 data_file = "pages/files/all_demographics.csv"  # Update the path if needed
