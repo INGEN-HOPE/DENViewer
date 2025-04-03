@@ -60,7 +60,7 @@ By leveraging data visualization, algorithm development, and real-time updates, 
 # Team Lead
 team_lead = {
     "name": "Dr Rajesh Pandey",
-    "title": "Mentor",
+    "title": "team lead",
     "photo": "pages/images/rajesh.jpg",
     "linkedin": "https://linkedin.com/in/rajesh-pandey-01238656",
     "twitter": "https://x.com/RajeshPandeyLab",
