@@ -222,9 +222,26 @@ st.plotly_chart(fig, use_container_width=True)
 
 st.markdown('#### Mutations List')
 
+# Sidebar selection for Mutation Type
+mutation_types = df_selected_year["Mutation Type"].unique()
+selected_mutation_type = st.sidebar.selectbox("Select Mutation Type", ["All"] + list(mutation_types))
+
+# Sidebar slider for Mutation Position
+min_pos, max_pos = df_selected_year["Position"].min(), df_selected_year["Position"].max()
+selected_position = st.sidebar.slider("Select Position Range", int(min_pos), int(max_pos), (int(min_pos), int(max_pos)))
+
+# Filter DataFrame based on selection
+filtered_df = df_selected_year.copy()
+
+if selected_mutation_type != "All":
+    filtered_df = filtered_df[filtered_df["Mutation Type"] == selected_mutation_type]
+
+filtered_df = filtered_df[(filtered_df["Position"] >= selected_position[0]) & 
+                          (filtered_df["Position"] <= selected_position[1])]
+
 # Display the filtered dataframe with selected columns
 st.dataframe(
-    df_selected_year,  # Ensure correct column selection
+    filtered_df,  # Ensure correct column selection
     hide_index=True,
     width=None,
     column_config={
