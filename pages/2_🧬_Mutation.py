@@ -156,7 +156,7 @@ for gene in gene_ranges:
     )
     fig.add_annotation(
         x=(gene['start'] + gene['end']) / 2,
-        y=-1 * gene_bar_height,  # Move labels slightly lower
+        y=-1.5 * gene_bar_height,  # Move labels slightly lower
         text=gene['gene'],
         showarrow=False,
         font=dict(size=14, color='black', family="Arial Bold"),  # Larger & bolder text
