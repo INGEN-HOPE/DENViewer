@@ -70,7 +70,7 @@ team_lead = {
 # Team Members
 team_members = [
     {"name": "Priyanka Mehta", "photo": "pages/images/priyanka.jpg", "linkedin": "https://www.linkedin.com/in/priyanka-mehta-92339a355", "twitter": "https://x.com/priyankammehta", "github": "https://github.com/priyankamehta1811"},
-    {"name": "Varsha Ravi", "photo": "pages/images/varsha.jpg", "linkedin": "https://www.linkedin.com/in/varsha-ravi-818526107", "twitter": "https://twitter.com/varsha_ravi_", "github": "#"},
+    {"name": "Varsha Ravi", "photo": "pages/images/varsha.jpeg", "linkedin": "https://www.linkedin.com/in/varsha-ravi-818526107", "twitter": "https://twitter.com/varsha_ravi_", "github": "#"},
     {"name": "M D Imran", "photo": "pages/images/imran.jpg", "linkedin": "#", "twitter": "#", "github": "#"},
     {"name": "Ramakant Mohite", "photo": "pages/images/rama.jpg", "linkedin": "https://www.linkedin.com/in/ramakant-mohite-42875a212", "twitter": "https://twitter.com/mohite_ramakant", "github": "#"},
     {"name": "Jyoti Soni", "photo": "pages/images/jyoti.jpg", "linkedin": "#", "twitter": "https://x.com/Sonijyoti63", "github": "#"},
