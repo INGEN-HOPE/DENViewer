@@ -75,7 +75,7 @@ else:
 # Dropdown to Select Coloring (Optional)
 color_option = st.selectbox(
     "Select Column for Coloring (Optional)", 
-    ["None"] + categorical_cols
+    ["Gender"] + categorical_cols
 )
 color_column = None if color_option == "None" else color_option
 
