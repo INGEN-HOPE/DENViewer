@@ -60,7 +60,7 @@ By leveraging data visualization, algorithm development, and real-time updates, 
 # Team Lead
 team_lead = {
     "name": "Dr Rajesh Pandey",
-    "title": "team lead",
+    "title": "mentor",
     "photo": "pages/images/rajesh.jpg",
     "linkedin": "https://linkedin.com/in/rajesh-pandey-01238656",
     "twitter": "https://x.com/RajeshPandeyLab",
@@ -102,7 +102,10 @@ st.markdown(
 st.title("Meet the Team")
 st.markdown("#### Mentor", unsafe_allow_html=True)
 
-
+for i in range(len(team_lead)):
+    cols = st.columns(1)  # Creates one column per iteration
+    with cols[0]:
+        member = team_lead[i]
                 # Display Team Lead Separately
                     st.markdown('<div class="team-container">', unsafe_allow_html=True)
                     st.image(team_lead["photo"], width=300, caption=team_lead["name"], output_format="PNG")
@@ -119,10 +122,10 @@ st.markdown("#### Mentor", unsafe_allow_html=True)
 st.markdown("---")
 
 # Display Other Team Members in Rows of 3
-for i in range(0, len(team_members), 1):
-    cols = st.columns(1)
+for i in range(0, len(team_members), 3):
+    cols = st.columns(3)
     
-    for j in range(1):
+    for j in range(3):
         if i + j < len(team_members):
             member = team_members[i + j]
             with cols[j]:
