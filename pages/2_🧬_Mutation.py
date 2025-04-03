@@ -224,11 +224,11 @@ st.markdown('#### Mutations List')
 
 # Sidebar selection for Mutation Type
 mutation_types = df_selected_year["Mutation Type"].unique()
-selected_mutation_type = st.sidebar.selectbox("Select Mutation Type", ["All"] + list(mutation_types))
+selected_mutation_type = st.selectbox("Select Mutation Type", ["All"] + list(mutation_types))
 
 # Sidebar slider for Mutation Position
 min_pos, max_pos = df_selected_year["Position"].min(), df_selected_year["Position"].max()
-selected_position = st.sidebar.slider("Select Position Range", int(min_pos), int(max_pos), (int(min_pos), int(max_pos)))
+selected_position = st.slider("Select Position Range", int(min_pos), int(max_pos), (int(min_pos), int(max_pos)))
 
 # Filter DataFrame based on selection
 filtered_df = df_selected_year.copy()
