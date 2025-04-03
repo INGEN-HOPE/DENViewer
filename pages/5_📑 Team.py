@@ -108,7 +108,12 @@ for i in range(1):
 
         # Display Team Lead Separately
             st.markdown('<div class="team-container">', unsafe_allow_html=True)
-            st.image(team_lead["photo"], width=300, caption=team_lead["name"], output_format="PNG")
+            # Create a custom HTML to center the image
+            st.markdown(f"""<div style="display: flex; justify-content: center;"><img src="{team_lead['photo']}" width="300" alt="{team_lead['name']}" />
+            </div>""", unsafe_allow_html=True)
+
+            # Optionally, display the name below the image
+            st.markdown(f"### {team_lead['name']}")
 
             # Team Lead Social Media Links
             lead_links = [link for link in [team_lead["linkedin"], team_lead["twitter"], team_lead["github"]] if link and link != "#"]
