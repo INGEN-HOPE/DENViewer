@@ -50,6 +50,10 @@ st.sidebar.markdown("---")
 data_file = "pages/files/all_demographics.csv"  # Update the path if needed
 df = pd.read_csv(data_file)
 
+# Define severity order
+severity_order = ["Mild", "Moderate", "Severe"]
+df["Severity"] = pd.Categorical(df["Severity"], categories=severity_order, ordered=True)
+
 # Ensure column names are stripped of any extra spaces
 df.columns = df.columns.str.strip()
 
@@ -63,7 +67,7 @@ st.title("Interactive Data Visualization")
 # Dropdown to Select Plot Type
 plot_type = st.selectbox(
     "Select Plot Type", 
-    ["Bar Plot", "Boxplot", "Histogram", "Pie Chart", "Sunburst Chart"]
+    [ "Boxplot","Bar Plot", "Histogram", "Pie Chart", "Sunburst Chart"]
 )
 
 # Dropdown to Select X-axis (only for relevant plots)
