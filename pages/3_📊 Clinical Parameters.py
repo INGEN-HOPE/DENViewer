@@ -19,9 +19,6 @@ st.sidebar.markdown("---")
 data_file = "pages/files/all_demographics.csv"  # Update the path if needed
 df = pd.read_csv(data_file)
 
-# Remove NA values
-df = df.dropna()
-
 # Define severity order (Severe → Mild → Moderate)
 severity_order = ["Severe", "Mild", "Moderate"]
 df["Severity"] = pd.Categorical(df["Severity"], categories=severity_order, ordered=True)
