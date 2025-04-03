@@ -119,10 +119,10 @@ st.markdown("#### Mentor", unsafe_allow_html=True)
 st.markdown("---")
 
 # Display Other Team Members in Rows of 3
-for i in range(0, len(team_members), 3):
-    cols = st.columns(3)
+for i in range(0, len(team_members), 1):
+    cols = st.columns(1)
     
-    for j in range(3):
+    for j in range(1):
         if i + j < len(team_members):
             member = team_members[i + j]
             with cols[j]:
