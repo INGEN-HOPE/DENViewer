@@ -76,7 +76,9 @@ team_members = [
     {"name": "Jyoti Soni", "photo": "pages/images/jyoti.jpg", "linkedin": "#", "twitter": "https://x.com/Sonijyoti63", "github": "#"},
     {"name": "Balendu Upmanyu", "photo": "pages/images/Balendu.jpg", "linkedin": "https://www.linkedin.com/in/balendu-upmanyu-64b684217", "twitter": "#", "github": "#"},
     {"name": "Keerti Aswin", "photo": "pages/images/Aswin.jpg", "linkedin": "#", "twitter": "https://x.com/keerthic_aswin", "github": "#"},
-    {"name": "Raj Rajeshwar Chowdhry", "photo": "pages/images/jyoti.jpg", "linkedin": "#", "twitter": "#", "github": "#"},
+    {"name": "Raj Rajeshwar Choudhury", "photo": "pages/images/jyoti.jpg", "linkedin": "#", "twitter": "#", "github": "#"},
+    {"name": "Talibhu", "photo": "pages/images/jyoti.jpg", "linkedin": "#", "twitter": "#", "github": "#"},
+    {"name": "Ayesha", "photo": "pages/images/jyoti.jpg", "linkedin": "#", "twitter": "#", "github": "#"},
 ]
 
 # Custom CSS for Proper Vertical Alignment
