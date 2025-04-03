@@ -34,7 +34,19 @@ st.sidebar.markdown(
 )
 
 st.sidebar.markdown("---")
-
+# Custom CSS to expand content area
+st.markdown(
+    """
+    <style>
+    .block-container {
+        max-width: 95%;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 # Load Data
 try:
     df = pd.read_csv('pages/files/all_Mutations.csv')
