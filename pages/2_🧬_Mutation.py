@@ -224,7 +224,7 @@ st.markdown('#### Mutations List')
 
 # Display the filtered dataframe with selected columns
 st.dataframe(
-    df_selected_year[column_order],  # Ensure correct column selection
+    df_selected_year,  # Ensure correct column selection
     hide_index=True,
     width=None,
     column_config={
