@@ -26,9 +26,6 @@ df = df.dropna()
 severity_order = ["Severe", "Mild", "Moderate"]
 df["Severity"] = pd.Categorical(df["Severity"], categories=severity_order, ordered=True)
 
-# Ensure column names are stripped of any extra spaces
-df.columns = df.columns.str.strip()
-
 # Convert categorical columns to strings
 categorical_cols = ["Gender", "Severity", "Age", "Collection_date"]  # Adjust if needed
 df[categorical_cols] = df[categorical_cols].astype(str)
