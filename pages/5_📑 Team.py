@@ -97,7 +97,7 @@ st.markdown(
 )
 
 st.title("Meet the Team")
-st.markdown("#### Team lead", unsafe_allow_html=True)
+st.markdown("#### Mentor", unsafe_allow_html=True)
 
 # Display Team Lead Separately
 st.markdown('<div class="team-container">', unsafe_allow_html=True)
