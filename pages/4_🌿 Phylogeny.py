@@ -174,6 +174,7 @@ st.markdown(
     <hr>
     <p style='text-align: center;'>
     © 2024 Rajesh Pandey | Ingen-hope Lab
+   Some visualizations may take time to load due to the complexity of the data. Please be patient while the plots generate.
     </p>
     """,
     unsafe_allow_html=True
