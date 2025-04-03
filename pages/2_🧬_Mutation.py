@@ -42,6 +42,17 @@ except FileNotFoundError:
     st.error("File 'all_Mutations.csv' not found. Please check the file path.")
     st.stop()
 
+st.title("### **Mutation Data Visualization** ")
+st.markdown(  
+    """
+    This interactive page provides insights into **mutations** observed in dengue virus genomes across different years. Users can explore the **distribution and frequency** of mutations, helping to track viral evolution and potential impact on disease severity or vaccine efficacy.  
+
+    #### **Key Features:**  
+    - **Year-wise Mutation Analysis:** Select different years from the sidebar to compare mutation trends over time.  
+    - **Lollipop Plot Visualization:** View mutations mapped along the viral genome, highlighting key variations.  
+    - **Comprehensive Mutation List:** Access a detailed list of mutations, including nucleotide and amino acid changes.  
+""")
+
 # Add a sidebar option to select the year (assuming you have a 'Year' column)
 selected_year = st.sidebar.selectbox("Select Year", df["Year"].unique())
 
