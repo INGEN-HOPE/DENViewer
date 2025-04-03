@@ -34,8 +34,7 @@ st.sidebar.markdown(
     """,
     unsafe_allow_html=True
 )
-# Optional: Add a separator for aesthetics
-st.sidebar.markdown("---")
+
 
 
 # Custom CSS to expand content area
