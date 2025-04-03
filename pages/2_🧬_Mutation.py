@@ -220,6 +220,25 @@ fig.update_layout(
 # Display in Streamlit
 st.plotly_chart(fig, use_container_width=True)
 
+st.markdown('#### Mutations List')
+
+# Display the filtered dataframe with selected columns
+st.dataframe(
+    df_selected_year[column_order],  # Ensure correct column selection
+    hide_index=True,
+    width=None,
+    column_config={
+        "Position": st.column_config.TextColumn("Position"),
+        "Frequency": st.column_config.ProgressColumn("Frequency", format="%.6f"),
+        "Mild Frequency": st.column_config.ProgressColumn("Mild Frequency", format="%.6f"),
+        "Moderate Frequency": st.column_config.ProgressColumn("Moderate Frequency", format="%.6f"),
+        "Severe Frequency": st.column_config.ProgressColumn("Severe Frequency", format="%.6f"),
+        "Year": st.column_config.TextColumn("Year"),
+        "Annotation": st.column_config.TextColumn("Annotation"),
+        "Gene": st.column_config.TextColumn("Gene")
+    }
+)
+
 # Footer
 st.markdown(
     """
