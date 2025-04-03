@@ -2,63 +2,35 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-
 # Set Streamlit page config
 st.set_page_config(
-    page_title="DENViewer ", #Decoding 
+    page_title="DENViewer",
     page_icon="🧫",
     layout="wide",
-    initial_sidebar_state="auto",
-    menu_items={
-        "Get Help": None,
-        "Report a bug": None,
-        "About": None,
-    }    
+    initial_sidebar_state="auto"
 )
 
-# Add logo (replace with your image path)
+# Add Sidebar Content
 st.sidebar.image("pages/images/lab_logo.png", use_container_width=True)
-# Add Dashboard Name
 st.sidebar.markdown('<p class="sidebar-title">DENViewer</p>', unsafe_allow_html=True)
-
-
-# Sidebar customization
-st.sidebar.markdown(
-    """
-    <style>
-        .sidebar-title {
-            font-size: 24px;
-            font-weight: bold;
-            text-align: center;
-            color: "white";
-            margin-bottom: 10px;
-        }
-        .sidebar-logo {
-            display: block;
-            margin: 0 auto;
-            width: 150px;  /* Adjust size as needed */
-            border-radius: 10px;
-        }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-# Optional: Add a separator for aesthetics
 st.sidebar.markdown("---")
 
 # Load Data
 data_file = "pages/files/all_demographics.csv"  # Update the path if needed
 df = pd.read_csv(data_file)
 
-# Define severity order
-severity_order = ["Mild", "Moderate", "Severe"]
+# Remove NA values
+df = df.dropna()
+
+# Define severity order (Severe → Mild → Moderate)
+severity_order = ["Severe", "Mild", "Moderate"]
 df["Severity"] = pd.Categorical(df["Severity"], categories=severity_order, ordered=True)
 
 # Ensure column names are stripped of any extra spaces
 df.columns = df.columns.str.strip()
 
 # Convert categorical columns to strings
-categorical_cols = ["Gender", "Severity", "Age","Collection_date"]  # Adjust if needed
+categorical_cols = ["Gender", "Severity", "Age", "Collection_date"]  # Adjust if needed
 df[categorical_cols] = df[categorical_cols].astype(str)
 
 # Streamlit App Layout
@@ -67,7 +39,7 @@ st.title("Interactive Data Visualization")
 # Dropdown to Select Plot Type
 plot_type = st.selectbox(
     "Select Plot Type", 
-    [ "Boxplot","Bar Plot", "Histogram", "Pie Chart", "Sunburst Chart"]
+    ["Boxplot", "Bar Plot", "Histogram", "Pie Chart", "Sunburst Chart"]
 )
 
 # Dropdown to Select X-axis (only for relevant plots)
@@ -88,16 +60,16 @@ fig = None  # Initialize empty figure
 
 if plot_type == "Bar Plot":
     df_grouped = df.groupby([x_axis, color_column]).size().reset_index(name="Count")
-    fig = px.bar(df_grouped, x=x_axis, y="Count", color=color_column)
-    fig.update_layout(yaxis_title="Count")  # Proper y-axis labeling
+    fig = px.bar(df_grouped, x=x_axis, y="Count", color=color_column, category_orders={"Severity": severity_order})
+    fig.update_layout(yaxis_title="Count")
     fig.update_traces(hovertemplate="%{x}: %{y}")
 
 elif plot_type == "Boxplot":
-    fig = px.box(df, x=x_axis, y="Age", color=color_column)
+    fig = px.box(df, x=x_axis, y="Age", color=color_column, category_orders={"Severity": severity_order})
     fig.update_traces(hovertemplate="%{x}: Median=%{y}")
 
 elif plot_type == "Histogram":
-    fig = px.histogram(df, x=x_axis, color=color_column, nbins=20, barmode="overlay")
+    fig = px.histogram(df, x=x_axis, color=color_column, nbins=20, barmode="overlay", category_orders={"Severity": severity_order})
     fig.update_traces(hovertemplate="%{x}: Count=%{y}")
 
 elif plot_type == "Pie Chart":
@@ -119,13 +91,13 @@ if fig:
     st.plotly_chart(fig, use_container_width=True)
 
 with st.expander('About', expanded=True):
-        st.write('''
-            - :orange[**Severity Classification**]: 
-                -Mild: (Dengue without warning signs): Patients with normal platelet and leukocyte counts (no thrombocytopenia or leukopenia).
-                -Moderate (Dengue with warning signs): Patients with normal platelet counts but decreased leukocyte counts (leukopenia without thrombocytopenia). 
-                -Severe: Patients with both low platelet counts (thrombocytopenia) and decreased leukocyte counts (leukopenia).
-            - :orange[**Sequencing platform**]: Oxford Nanopore Technology
-            ''')
+    st.write('''
+        - :orange[**Severity Classification**]: 
+            - **Mild**: Dengue without warning signs (normal platelet & leukocyte counts)
+            - **Moderate**: Dengue with warning signs (normal platelet, decreased leukocytes)
+            - **Severe**: Dengue with thrombocytopenia (low platelets & leukocytes)
+        - :orange[**Sequencing platform**]: Oxford Nanopore Technology
+    ''')
 
 # Footer
 st.markdown(
