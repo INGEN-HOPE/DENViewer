@@ -102,13 +102,7 @@ st.markdown(
 st.title("Meet the Team")
 st.markdown("#### Mentor", unsafe_allow_html=True)
 
-for i in range(0, len(team_lead), 3):
-    cols = st.columns(3)
-    
-    for j in range(3):
-        if i + j < len(team_lead):
-            member = team_lead[i + j]
-            with cols[j]:
+
                 # Display Team Lead Separately
                     st.markdown('<div class="team-container">', unsafe_allow_html=True)
                     st.image(team_lead["photo"], width=300, caption=team_lead["name"], output_format="PNG")
