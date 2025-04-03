@@ -70,11 +70,11 @@ team_lead = {
 # Team Members
 team_members = [
     {"name": "Priyanka Mehta", "photo": "pages/images/priyanka.jpg", "linkedin": "https://www.linkedin.com/in/priyanka-mehta-92339a355", "twitter": "https://x.com/priyankammehta", "github": "https://github.com/priyankamehta1811"},
-    {"name": "Varsha Ravi", "photo": "pages/images/varsha.jpeg", "linkedin": "https://www.linkedin.com/in/varsha-ravi-818526107", "twitter": "https://twitter.com/varsha_ravi_", "github": "#"},
+    {"name": "Varsha Ravi", "photo": "pages/images/varsha.jpeg", "linkedin": "https://www.linkedin.com/in/varsha-ravi-818526107", "twitter": "https://x.com/varsha_ravi_", "github": "#"},
     {"name": "M D Imran", "photo": "pages/images/imran.jpg", "linkedin": "#", "twitter": "#", "github": "#"},
-    {"name": "Ramakant Mohite", "photo": "pages/images/rama.jpg", "linkedin": "https://www.linkedin.com/in/ramakant-mohite-42875a212", "twitter": "https://twitter.com/mohite_ramakant", "github": "#"},
+    {"name": "Ramakant Mohite", "photo": "pages/images/rama.jpg", "linkedin": "https://www.linkedin.com/in/ramakant-mohite-42875a212", "twitter": "https://x.com/mohite_ramakant", "github": "#"},
     {"name": "Jyoti Soni", "photo": "pages/images/jyoti.jpg", "linkedin": "#", "twitter": "https://x.com/Sonijyoti63", "github": "#"},
-    {"name": "Balendu Upmanyu", "photo": "pages/images/Balendu.jpg", "linkedin": "https://www.linkedin.com/in/balendu-upmanyu-64b684217", "twitter": "", "github": "#"},
+    {"name": "Balendu Upmanyu", "photo": "pages/images/Balendu.jpg", "linkedin": "https://www.linkedin.com/in/balendu-upmanyu-64b684217", "twitter": "#", "github": "#"},
     {"name": "Keerti Aswin", "photo": "pages/images/Aswin.jpg", "linkedin": "#", "twitter": "https://x.com/keerthic_aswin", "github": "#"},
     {"name": "Raj Rajeshwar Chowdhry", "photo": "pages/images/jyoti.jpg", "linkedin": "#", "twitter": "#", "github": "#"},
 ]
@@ -102,7 +102,7 @@ st.markdown(
 st.title("Meet the Team")
 st.markdown("#### Mentor", unsafe_allow_html=True)
 
-cols_lead1 = st.columns(1)
+cols_lead1 = st.columns(2)
 for i in range(1):
     with cols_lead1[0]: 
 
@@ -117,9 +117,9 @@ for i in range(1):
                     social_media_icons.render()
 
             st.markdown('</div>', unsafe_allow_html=True)
-
-# Horizontal Divider
-st.markdown("---")
+     with cols_lead1[1]: 
+            # Horizontal Divider
+            st.markdown("---")
 
 # Display Other Team Members in Rows of 3
 for i in range(0, len(team_members), 3):
