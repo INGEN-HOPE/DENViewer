@@ -31,7 +31,7 @@ categorical_cols = ["Age","Gender", "Severity","Collection_date"]  # Adjust if n
 df[categorical_cols] = df[categorical_cols].astype(str)
 
 # Streamlit App Layout
-st.title("Interactive Clinical Metadata Visualization")
+st.title("Clinical Parameters")
 
 st.markdown(
         """
