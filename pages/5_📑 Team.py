@@ -102,8 +102,9 @@ st.markdown(
 st.title("Meet the Team")
 st.markdown("#### Mentor", unsafe_allow_html=True)
 
-cols_lead1, col_lead2 = st.columns((2,3), gap='medium')
-with cols_lead1[0]:
+cols_lead1 = st.columns(1)
+for i in range(len(team_lead)):
+    with cols_lead1[0]: 
 
         # Display Team Lead Separately
             st.markdown('<div class="team-container">', unsafe_allow_html=True)
@@ -117,8 +118,7 @@ with cols_lead1[0]:
 
             st.markdown('</div>', unsafe_allow_html=True)
 
-with cols_lead2[1]:
-    st.markdown(""" """)
+
 
 # Horizontal Divider
 st.markdown("---")
