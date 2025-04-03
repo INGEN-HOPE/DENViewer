@@ -42,7 +42,7 @@ except FileNotFoundError:
     st.error("File 'all_Mutations.csv' not found. Please check the file path.")
     st.stop()
 
-st.title("### **Mutation Data Visualization** ")
+st.title("Mutation Data Visualization")
 st.markdown(  
     """
     This interactive page provides insights into **mutations** observed in dengue virus genomes across different years. Users can explore the **distribution and frequency** of mutations, helping to track viral evolution and potential impact on disease severity or vaccine efficacy.  
