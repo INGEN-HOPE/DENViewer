@@ -102,21 +102,23 @@ st.markdown(
 st.title("Meet the Team")
 st.markdown("#### Mentor", unsafe_allow_html=True)
 
-for i in range(len(team_lead)):
-    cols = st.columns(1)  # Creates one column per iteration
-    with cols[0]:
-        member = team_lead[i]
-                # Display Team Lead Separately
-                    st.markdown('<div class="team-container">', unsafe_allow_html=True)
-                    st.image(team_lead["photo"], width=300, caption=team_lead["name"], output_format="PNG")
+col1, col2 = st.columns((2,3), gap='medium')
+with cols[0]:
 
-                    # Team Lead Social Media Links
-                    lead_links = [link for link in [team_lead["linkedin"], team_lead["twitter"], team_lead["github"]] if link and link != "#"]
-                    if lead_links:
-                        social_media_icons = SocialMediaIcons(lead_links)
-                        social_media_icons.render()
+        # Display Team Lead Separately
+            st.markdown('<div class="team-container">', unsafe_allow_html=True)
+            st.image(team_lead["photo"], width=300, caption=team_lead["name"], output_format="PNG")
 
-                    st.markdown('</div>', unsafe_allow_html=True)
+            # Team Lead Social Media Links
+            lead_links = [link for link in [team_lead["linkedin"], team_lead["twitter"], team_lead["github"]] if link and link != "#"]
+            if lead_links:
+                    social_media_icons = SocialMediaIcons(lead_links)
+                    social_media_icons.render()
+
+            st.markdown('</div>', unsafe_allow_html=True)
+
+with cols[1]:
+    st.markdown(""" """)
 
 # Horizontal Divider
 st.markdown("---")
