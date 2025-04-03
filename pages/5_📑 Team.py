@@ -49,8 +49,7 @@ st.sidebar.markdown("---")
 st.title("About Us")
 
 # Brief introduction text
-st.markdown("""###
-    Learning Genomics to Learn Genomes""")
+st.markdown("### Learning Genomics to Learn Genomes")
 st.markdown("""Our team is dedicated to the development of an interactive Infectious Diseases Dashboard, integrating genomic and clinical data for better information dissemination. 
 By leveraging data visualization, algorithm development, and real-time updates, we aim to create a dynamic platform that strengthens the public health paradigm.
 """)
