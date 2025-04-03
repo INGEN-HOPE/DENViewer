@@ -31,19 +31,17 @@ categorical_cols = ["Age","Gender", "Severity","Collection_date"]  # Adjust if n
 df[categorical_cols] = df[categorical_cols].astype(str)
 
 # Streamlit App Layout
-st.title("Interactive Data Visualization")
+st.title("Interactive Clinical Metadata Visualization")
 
 st.markdown(
         """
         <p class='sub-header' style='text-align: justify;'>
         This page provides an interactive platform to explore key clinical parameters related to dengue surveillance. By analyzing patient demographics, disease severity, and other clinical indicators, users can gain a deeper understanding of the impact of dengue infections.
 
-        Key Features:
-        Severity Distribution: Visualize how disease severity varies across different patient groups.
-
-        Age and Gender Trends: Examine how age and gender influence clinical outcomes.
-
-        Clinical Insights: Analyze key clinical parameters to identify patterns and associations.</p>
+         #### **Key Features:** 
+        - **Severity Distribution:** Visualize how disease severity varies across different patient groups.
+        - **Age and Gender Trends:** Examine how age and gender influence clinical outcomes.
+        - **Clinical Insights:** Analyze key clinical parameters to identify patterns and associations.</p>
         """,
         unsafe_allow_html=True
     )
