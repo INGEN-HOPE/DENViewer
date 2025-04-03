@@ -115,7 +115,7 @@ for i in range(1):
             st.markdown("""<div style="display: flex; justify-content: center;">
             </div>""", unsafe_allow_html=True)
             # Optionally, display the name below the image
-            st.markdown("### {team_lead['name']}")
+            st.markdown(f"### {team_lead['name']}")
 
             # Team Lead Social Media Links
             lead_links = [link for link in [team_lead["linkedin"], team_lead["twitter"], team_lead["github"]] if link and link != "#"]
