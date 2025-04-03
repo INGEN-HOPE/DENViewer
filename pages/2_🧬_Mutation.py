@@ -144,7 +144,7 @@ gene_ranges = [
     {'start': 10276, 'end': 11000, 'gene': '3 UTR', 'color': '#2E8B57'}  # Sea Green
 ]
 
-gene_bar_height = 0.08 * max(df['Frequency'])  # Adjust height relative to max Frequency
+gene_bar_height = 0.04 * max(df['Frequency'])  # Adjust height relative to max Frequency
 
 for gene in gene_ranges:
     fig.add_shape(
@@ -156,7 +156,7 @@ for gene in gene_ranges:
     )
     fig.add_annotation(
         x=(gene['start'] + gene['end']) / 2,
-        y=-1.5 * gene_bar_height,  # Move labels slightly lower
+        y=-1 * gene_bar_height,  # Move labels slightly lower
         text=gene['gene'],
         showarrow=False,
         font=dict(size=14, color='black', family="Arial Bold"),  # Larger & bolder text
