@@ -111,7 +111,8 @@ for i in range(1):
         # Display Team Lead Separately
             st.markdown('<div class="team-container">', unsafe_allow_html=True)
             # Create a custom HTML to center the image
-            st.markdown("""<div style="display: flex; justify-content: center;"><img src="{team_lead['photo']}" width="300" alt="{team_lead['name']}" />
+            st.image(team_lead["photo"], width=300, output_format="PNG")
+            st.markdown("""<div style="display: flex; justify-content: center;">
             </div>""", unsafe_allow_html=True)
 
             # Optionally, display the name below the image
