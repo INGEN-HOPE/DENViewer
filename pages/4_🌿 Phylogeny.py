@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import plotly.express as px
 from ete3 import Tree
 import plotly.graph_objects as go
 
@@ -9,10 +10,9 @@ st.set_page_config(
     page_icon="🧫",
     layout="wide",
     initial_sidebar_state="auto",
-    menu_items={"Get Help": None, "Report a bug": None, "About": None}    
 )
 
-# Add logo and sidebar title
+# Sidebar (Logo + Title)
 st.sidebar.image("pages/images/lab_logo.png", use_container_width=True)
 st.sidebar.markdown('<p class="sidebar-title">DENViewer</p>', unsafe_allow_html=True)
 st.sidebar.markdown("---")
@@ -27,14 +27,14 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-st.title("Phylogenetic Tree")
+st.title("Phylogenetic Tree with Boxplot Analysis")
 
-# Cache metadata loading
+# Cache data loading
 @st.cache_data
 def load_metadata():
-    metadata = pd.read_csv("pages/files/all_clade.csv")
-    metadata.columns = metadata.columns.str.strip()
-    return metadata
+    df = pd.read_csv("pages/files/all_clade.csv")
+    df.columns = df.columns.str.strip()
+    return df.dropna()  # Filter out NA values
 
 metadata = load_metadata()
 
@@ -44,6 +44,12 @@ def load_tree():
     return Tree("pages/files/tree.nwk", format=1)
 
 tree = load_tree()
+
+# Boxplot: Age vs Severity
+if "Age" in metadata.columns and "Severity" in metadata.columns:
+    st.subheader("Age Distribution by Severity")
+    fig_box = px.box(metadata, x="Severity", y="Age", color="Severity", title="Boxplot of Age by Severity")
+    st.plotly_chart(fig_box, use_container_width=True)
 
 # Select metadata column for coloring
 selected_column = st.selectbox("Select metadata column for coloring:", metadata.columns, index=2)
@@ -69,7 +75,7 @@ def assign_positions(node, depth=0):
 
 assign_positions(tree)
 
-# Create the figure
+# Create Phylogenetic Tree Figure
 fig = go.Figure()
 
 # Add tree branches
@@ -80,7 +86,7 @@ for node in tree.traverse():
             fig.add_trace(go.Scatter(x=[x_positions[parent], x_positions[parent]], y=[y_positions[parent], y_positions[node]], mode="lines", line=dict(color="black", width=1), showlegend=False))
             fig.add_trace(go.Scatter(x=[x_positions[parent], x_positions[node]], y=[y_positions[node], y_positions[node]], mode="lines", line=dict(color="black", width=1), showlegend=False))
 
-# Add tree leaves with dynamic colors
+# Add tree leaves with colors
 legend_traces = {}
 for leaf in tree.iter_leaves():
     matched_rows = metadata.loc[metadata["IGIB_id"] == leaf.name, selected_column]
@@ -117,8 +123,8 @@ fig.update_layout(
 )
 
 # Display the tree
-with st.container():
-    st.plotly_chart(fig, use_container_width=True)
+st.subheader("Phylogenetic Tree")
+st.plotly_chart(fig, use_container_width=True)
 
 # Footer
 st.markdown("<hr><p style='text-align: center;'>© 2024 Rajesh Pandey | Ingen-hope Lab</p>", unsafe_allow_html=True)
