@@ -50,8 +50,9 @@ st.title("About Us")
 
 # Brief introduction text
 st.markdown("""
-    Welcome to our project! Here, we showcase the work of the talented creators behind this platform. 
-    Below you will find our team members, along with their LinkedIn profiles and photos.
+    Learning Genomics to Learn Genomes
+Our team is dedicated to the development of an interactive Infectious Diseases Dashboard, integrating genomic and clinical data for better information dissemination. 
+By leveraging data visualization, algorithm development, and real-time updates, we aim to create a dynamic platform that strengthens the public health paradigm.
 """)
 
 # Create a container for each creator with their name, LinkedIn link, and photo
@@ -60,7 +61,7 @@ st.markdown("""
 # Team Lead
 team_lead = {
     "name": "Dr Rajesh Pandey",
-    "title": "Team Lead",
+    "title": "Mentor",
     "photo": "pages/images/rajesh.jpg",
     "linkedin": "https://linkedin.com/in/rajesh-pandey-01238656",
     "twitter": "https://x.com/RajeshPandeyLab",
