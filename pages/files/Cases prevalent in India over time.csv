@@ -1,0 +1,217 @@
+﻿State Code,State,Cases,Deaths,Year,state_code
+AP,Andhra Pradesh,5286,0,2019,28
+AR,Arunanchal Pradesh,123 ,0 ,2019,12
+AS,Assam,196,0,2019,18
+BR,Bihar,6712,0,2019,10
+CG,Chhattisgarh,722,0,2019,22
+GA,Goa,992,0,2019,30
+GJ,Gujarat,18219,17,2019,24
+HR,Haryana,1207,0,2019,6
+HP,Himachal Pradesh,344,2,2019,2
+JK,Jammu & Kashmir,439,0,2019,1
+JH,Jharkhand,825,0,2019,20
+KA,Karnataka,16986,13,2019,29
+KL,Kerala,4652,16,2019,32
+LD,Lakshadweep,0,0,2019,31
+MP,Madhya Pradesh,4189,2,2019,23
+ML,Meghalaya,82,0,2019,17
+MH,Maharashtra,14907,29,2019,27
+MN,Manipur,359,0,2019,14
+MZ,Mizoram,42,0,2019,15
+NL,Nagaland,8,0,2019,13
+OR,Odisha,3758,4,2019,21
+PB,Punjab,10289,14,2019,3
+RJ,Rajasthan,13706,17,2019,8
+SK,Sikkim,444,0,2019,11
+TN,Tamil Nadu,8527,5,2019,33
+TR,Tripura,114,0,2019,32
+TG,Telangana,13331,7,2019,0
+UP,Uttar Pradesh,10557,26,2019,9
+UK,Uttarakhand,10622,8,2019,5
+WB,West Bengal,0,0,2019,19
+AN,Andaman & Nicobar Island, 168,0,2019,35
+CH,Chandigarh,286,0,2019,4
+DL,NCT of Delhi,5077,0,2019,7
+DN,Dadara & Nagar Havelli,2116,4,2019,26
+PY,Puducherry,2030,2,2019,34
+AP,Andhra Pradesh,925,0,2020,28
+AR,Arunanchal Pradesh,1,0,2020,12
+AS,Assam,33,0,2020,18
+BR,Bihar,493,2,2020,10
+CG,Chhattisgarh,57,0,2020,22
+GA,Goa,376,0,2020,30
+GJ,Gujarat,1564,2,2020,24
+HR,Haryana,1377,0,2020,6
+HP,Himachal Pradesh,21,0,2020,2
+JK,Jammu & Kashmir,53,0,2020,1
+JH,Jharkhand,79,0,2020,20
+KA,Karnataka,3823,0,2020,29
+KL,Kerala,4399,5,2020,32
+LD,Lakshadweep,0,0,2020,31
+MP,Madhya Pradesh,806,0,2020,23
+ML,Meghalaya,4,0,2020,17
+MH,Maharashtra,3356,10,2020,27
+MN,Manipur,37,0,2020,14
+MZ,Mizoram,67,0,2020,15
+NL,Nagaland,1,0,2020,13
+OR,Odisha,496,0,2020,21
+PB,Punjab,8435,22,2020,3
+RJ,Rajasthan,2023,7,2020,8
+SK,Sikkim,11,0,2020,11
+TN,Tamil Nadu,2410,0,2020,33
+TR,Tripura,24,0,2020,32
+TG,Telangana,2173,0,2020,0
+UP,Uttar Pradesh,3715,6,2020,9
+UK,Uttarakhand,76,1,2020,5
+WB,West Bengal,5166,0,2020,19
+AN,Andaman & Nicobar Island,98,0,2020,35
+CH,Chandigarh,265,0,2020,4
+DL,NCT of Delhi,1269,0,2020,7
+DN,Dadara & Nagar Havelli,319,0,2020,26
+PY,Puducherry,633,1,2020,34
+AP,Andhra Pradesh,4760,0,2021,28
+AR,Arunanchal Pradesh,7,0,2021,12
+AS,Assam,103,0,2021,18
+BR,Bihar,633,2,2021,10
+CG,Chhattisgarh,1086,0,2021,22
+GA,Goa,649,0,2021,30
+GJ,Gujarat,10983,14,2021,24
+HR,Haryana,11835,13,2021,6
+HP,Himachal Pradesh,349,0,2021,2
+JK,Jammu & Kashmir,1709,4,2021,1
+JH,Jharkhand,220,1,2021,20
+KA,Karnataka,7393,7,2021,29
+KL,Kerala,3251,27,2021,32
+LD,Lakshadweep,1,0,2021,31
+MP,Madhya Pradesh,15592,11,2021,23
+ML,Meghalaya,129,0,2021,17
+MH,Maharashtra,12720,42,2021,27
+MN,Manipur,203,0,2021,14
+MZ,Mizoram,83,0,2021,15
+NL,Nagaland,24,0,2021,13
+OR,Odisha,7548,0,2021,21
+PB,Punjab,23389,55,2021,3
+RJ,Rajasthan,20749,96,2021,8
+SK,Sikkim,243,1,2021,11
+TN,Tamil Nadu,6039,8,2021,33
+TR,Tripura,349,0,2021,32
+TG,Telangana,7135,0,2021,0
+UP,Uttar Pradesh,29750,29,2021,9
+UK,Uttarakhand,738,2,2021,5
+WB,West Bengal,8264,7,2021,19
+AN,Andaman & Nicobar Island,175,0,2021,35
+CH,Chandigarh,1596,3,2021,4
+DL,NCT of Delhi,13089,23,2021,7
+DN,Dadara & Nagar Havelli,826,0,2021,26
+PY,Puducherry,1625,1,2021,34
+AP,Andhra Pradesh,6391,0,2022,28
+AR,Arunanchal Pradesh, 114,0,2022,12
+AS,Assam, 1826,2,2022,18
+BR,Bihar, 13972,32,2022,10
+CG,Chhattisgarh, 2679,10,2022,22
+GA,Goa, 443,1,2022,30
+GJ,Gujarat, 6682,7,2022,24
+HR,Haryana, 8996,18,2022,6
+HP,Himachal Pradesh,3326,1,2022,2
+JK,Jammu & Kashmir,8269,18,2022,1
+JH,Jharkhand,290,0,2022,20
+KA,Karnataka,9889,9,2022,29
+KL,Kerala,4432,29,2022,32
+LD,Lakshadweep,67,0,2022,31
+MP,Madhya Pradesh,3318,2,2022,23
+ML,Meghalaya,26,0,2022,17
+MH,Maharashtra,8578,27,2022,27
+MN,Manipur,503,4,2022,14
+MZ,Mizoram,1868,5,2022,15
+NL,Nagaland,154,0,2022,13
+OR,Odisha,7063,0,2022,21
+PB,Punjab,11030,41,2022,3
+RJ,Rajasthan,13491,10,2022,8
+SK,Sikkim,264,0,2022,11
+TN,Tamil Nadu,6430,8,2022,33
+TR,Tripura,56,0,2022,32
+TG,Telangana,8972,0,2022,0
+UP,Uttar Pradesh, 19821,33,2022,9
+UK,Uttarakhand,2337,0,2022,5
+WB,West Bengal,67271,30,2022,19
+AN,Andaman & Nicobar Island,1014,3,2022,35
+CH,Chandigarh,910,1,2022,4
+DL,NCT of Delhi,10183,9,2022,7
+DN,Dadara & Nagar Havelli,913,0,2022,26
+PY,Puducherry,1673,3,2022,34
+AP,Andhra Pradesh,6453,0,2023,28
+AR,Arunanchal Pradesh,130,0,2023,12
+AS,Assam,8208,7,2023,18
+BR,Bihar,20224,74,2023,10
+CG,Chhattisgarh,2412,0,2023,22
+GA,Goa,512,3,2023,30
+GJ,Gujarat,7222,7,2023,24
+HR,Haryana,8081,11,2023,6
+HP,Himachal Pradesh,1989,0,2023,2
+JK,Jammu & Kashmir,6403,10,2023,1
+JH,Jharkhand,2578,4,2023,20
+KA,Karnataka,19300,11,2023,29
+KL,Kerala,17426,153,2023,32
+LD,Lakshadweep,445,0,2023,31
+MP,Madhya Pradesh,6979,0,2023,23
+ML,Meghalaya,114,0,2023,17
+MH,Maharashtra,19034,55,2023,27
+MN,Manipur,2548,0,2023,14
+MZ,Mizoram,2060,2,2023,15
+NL,Nagaland,4943,2,2023,13
+OR,Odisha,12845,1,2023,21
+PB,Punjab,13687,39,2023,3
+RJ,Rajasthan,13924,14,2023,8
+SK,Sikkim,311,0,2023,11
+TN,Tamil Nadu,9121,12,2023,33
+TR,Tripura,1447,0,2023,32
+TG,Telangana,8016,1,2023,0
+UP,Uttar Pradesh,35402,36,2023,9
+UK,Uttarakhand,4320,17,2023,5
+WB,West Bengal,30683,4,2023,19
+AN,Andaman & Nicobar Island,846,0,2023,35
+CH,Chandigarh,454,0,2023,4
+DL,NCT of Delhi,16866,19,2023,7
+DN,Dadara & Nagar Havelli,1462,0,2023,26
+PY,Puducherry,2790,2,2023,34
+AP,Andhra Pradesh,5555,0,2024,28
+AR,Arunanchal Pradesh,20,0,2024,12
+AS,Assam,2271,0,2024,18
+BR,Bihar,10157,16,2024,10
+CG,Chhattisgarh,3295,0,2024,22
+GA,Goa,567,0,2024,30
+GJ,Gujarat,7874,6,2024,24
+HR,Haryana,6468,9,2024,6
+HP,Himachal Pradesh,3359,0,2024,2
+JK,Jammu & Kashmir,6743,1,2024,1
+JH,Jharkhand,1528,1,2024,20
+KA,Karnataka,32826,20,2024,29
+KL,Kerala,21075,99,2024,32
+LD,Lakshadweep,513,0,2024,31
+MP,Madhya Pradesh,10183,6,2024,23
+ML,Meghalaya,74,0,2024,17
+MH,Maharashtra,19382,26,2024,27
+MN,Manipur,2463,5,2024,14
+MZ,Mizoram,1206,1,2024,15
+NL,Nagaland,43,0,2024,13
+OR,Odisha,9890,0,2024,21
+PB,Punjab,6265,13,2024,3
+RJ,Rajasthan,12484,4,2024,8
+SK,Sikkim,374,0,2024,11
+TN,Tamil Nadu,27378,13,2024,33
+TR,Tripura,1198,0,2024,32
+TG,Telangana,10077,0,2024,0
+UP,Uttar Pradesh,15845,8,2024,9
+UK,Uttarakhand,494,0,2024,5
+WB,West Bengal,441,0,2024,19
+AN,Andaman & Nicobar Island,58,0,2024,35
+CH,Chandigarh,349,0,2024,4
+DL,NCT of Delhi,10391,8,2024,7
+DN,Dadara & Nagar Havelli,608,0,2024,26
+PY,Puducherry,1874,0,2024,34
+DD,Daman & Diu, 625,2,2019,25
+DD,Daman & Diu,71,0,2020,25
+DD,Daman & Diu,279,0,2021,25
+DD,Daman & Diu,228,0,2022,25
+DD,Daman & Diu,284,1,2023,25
+DD,Daman & Diu,277,0,2024,25

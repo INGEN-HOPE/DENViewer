@@ -1,0 +1,67 @@
+<style>
+/* Global Styles */
+body {
+    background-color: #f0f4f8; /* Light Blue-White Background */
+    color: #2c3e50; /* Dark Blue Text */
+    font-family: 'Arial', sans-serif;
+}
+
+/* Add a full-width banner image */
+.banner {
+    width: 100%;
+    height: 250px; /* Adjust height as needed */
+    background-image: url('your-image-url.jpg'); /* Replace with your image */
+    background-size: cover;
+    background-position: center;
+    border-bottom: 4px solid #1f4068; /* Dark blue border under banner */
+}
+
+/* Headers */
+h1, h2, h3 {
+    color: #1f4068; /* Deep Blue */
+    text-align: center;
+}
+
+/* Buttons */
+.stButton>button {
+    background-color: #1f78d1; /* Bright Blue */
+    color: white;
+    border-radius: 8px;
+    padding: 10px 15px;
+    border: none;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.stButton>button:hover {
+    background-color: #145a8d; /* Darker Blue */
+    transform: scale(1.05);
+}
+
+/* Input Fields */
+.stTextInput, .stSelectbox, .stDateInput {
+    border-radius: 6px;
+    border: 1px solid #1f4068;
+    padding: 8px;
+    background-color: #ffffff;
+    color: #2c3e50;
+}
+
+/* Dataframes and Tables */
+.dataframe {
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Spacing for Content */
+.stMarkdown, .stText {
+    margin-bottom: 15px;
+}
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+</style>
