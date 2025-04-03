@@ -25,7 +25,7 @@ st.sidebar.markdown(
             font-size: 24px;
             font-weight: bold;
             text-align: center;
-            color: white;
+            color: black;
             margin-bottom: 10px;
         }
     </style>
