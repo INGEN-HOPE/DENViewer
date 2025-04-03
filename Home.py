@@ -49,7 +49,7 @@ st.sidebar.markdown(
 # Optional: Add a separator for aesthetics
 st.sidebar.markdown("---")
 
-
+st.title("Welcome to DENViewer")
 #st.image("pages/images/background.webp", caption="created using DALL.E")
 
 #Description
