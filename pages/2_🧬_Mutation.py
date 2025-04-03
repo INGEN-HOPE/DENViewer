@@ -128,29 +128,29 @@ for mt, color in zip(mutation_types, colors):
     for trace in traces:
         fig.add_trace(trace)
 
-# Define gene regions
+# Define gene regions with distinct colors
 gene_ranges = [
-    {'start': 1, 'end': 99, 'gene': '5 UTR'},
-    {'start': 100, 'end': 441, 'gene': 'C'},
-    {'start': 442, 'end': 939, 'gene': 'M'},
-    {'start': 940, 'end': 2424, 'gene': 'E'},
-    {'start': 2425, 'end': 3480, 'gene': 'NS1'},
-    {'start': 3481, 'end': 4134, 'gene': 'NS2A'},
-    {'start': 4135, 'end': 4524, 'gene': 'NS2B'},
-    {'start': 4525, 'end': 6378, 'gene': 'NS3'},
-    {'start': 6379, 'end': 6828, 'gene': 'NS4A'},
-    {'start': 6829, 'end': 7572, 'gene': 'NS4B'},
-    {'start': 7573, 'end': 10275, 'gene': 'NS5'},
-    {'start': 10276, 'end': 11000, 'gene': '3 UTR'}
+    {'start': 1, 'end': 99, 'gene': '5 UTR', 'color': '#FFA07A'},  # Light Salmon
+    {'start': 100, 'end': 441, 'gene': 'C', 'color': '#20B2AA'},  # Light Sea Green
+    {'start': 442, 'end': 939, 'gene': 'M', 'color': '#FF6347'},  # Tomato
+    {'start': 940, 'end': 2424, 'gene': 'E', 'color': '#8A2BE2'},  # Blue Violet
+    {'start': 2425, 'end': 3480, 'gene': 'NS1', 'color': '#4682B4'},  # Steel Blue
+    {'start': 3481, 'end': 4134, 'gene': 'NS2A', 'color': '#32CD32'},  # Lime Green
+    {'start': 4135, 'end': 4524, 'gene': 'NS2B', 'color': '#FFD700'},  # Gold
+    {'start': 4525, 'end': 6378, 'gene': 'NS3', 'color': '#DC143C'},  # Crimson
+    {'start': 6379, 'end': 6828, 'gene': 'NS4A', 'color': '#FF4500'},  # Orange Red
+    {'start': 6829, 'end': 7572, 'gene': 'NS4B', 'color': '#1E90FF'},  # Dodger Blue
+    {'start': 7573, 'end': 10275, 'gene': 'NS5', 'color': '#C71585'},  # Medium Violet Red
+    {'start': 10276, 'end': 11000, 'gene': '3 UTR', 'color': '#2E8B57'}  # Sea Green
 ]
 
-# Add shaded regions and labels
+# Add shaded regions with different colors
 for gene in gene_ranges:
     fig.add_shape(
         type='rect',
         x0=gene['start'], x1=gene['end'],
         y0=-0.02 * max(df['Frequency']), y1=0,
-        fillcolor='grey', opacity=0.2,
+        fillcolor=gene['color'], opacity=0.3,  # Adjust opacity for better visibility
         layer='below', line_width=0
     )
     fig.add_annotation(
@@ -162,7 +162,6 @@ for gene in gene_ranges:
         textangle=45,
         align='center'
     )
-
 # Create dropdown buttons
 dropdown_buttons = [
     {'label': 'All Mutation Types', 'method': 'update',
