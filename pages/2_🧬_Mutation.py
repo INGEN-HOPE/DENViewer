@@ -144,24 +144,26 @@ gene_ranges = [
     {'start': 10276, 'end': 11000, 'gene': '3 UTR', 'color': '#2E8B57'}  # Sea Green
 ]
 
-# Add shaded regions with different colors
+gene_bar_height = 0.08 * max(df['Frequency'])  # Adjust height relative to max Frequency
+
 for gene in gene_ranges:
     fig.add_shape(
         type='rect',
         x0=gene['start'], x1=gene['end'],
-        y0=-0.02 * max(df['Frequency']), y1=0,
-        fillcolor=gene['color'], opacity=0.3,  # Adjust opacity for better visibility
+        y0=-gene_bar_height, y1=0,  # Extend the height downwards
+        fillcolor=gene['color'], opacity=0.5,  # Increase opacity for better visibility
         layer='below', line_width=0
     )
     fig.add_annotation(
         x=(gene['start'] + gene['end']) / 2,
-        y=-0.1 * max(df['Frequency']),
+        y=-1.5 * gene_bar_height,  # Move labels slightly lower
         text=gene['gene'],
         showarrow=False,
-        font=dict(size=12, color='black'),
-        textangle=45,
+        font=dict(size=14, color='black', family="Arial Bold"),  # Larger & bolder text
+        textangle=0,  # Keep horizontal for better readability
         align='center'
     )
+    
 # Create dropdown buttons
 dropdown_buttons = [
     {'label': 'All Mutation Types', 'method': 'update',
