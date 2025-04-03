@@ -102,7 +102,8 @@ st.markdown(
 st.title("Meet the Team")
 st.markdown("#### Mentor", unsafe_allow_html=True)
 
-cols_lead1 = st.columns(2)
+cols_lead1 = st.columns(1)
+for i in range(len(team_lead[name])):
     with cols_lead1[0]: 
 
         # Display Team Lead Separately
@@ -116,9 +117,6 @@ cols_lead1 = st.columns(2)
                     social_media_icons.render()
 
             st.markdown('</div>', unsafe_allow_html=True)
-
-with cols_lead1[1]:
-            st.markdown("")
 
 # Horizontal Divider
 st.markdown("---")
