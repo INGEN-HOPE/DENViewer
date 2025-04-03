@@ -70,8 +70,8 @@ team_lead = {
 # Team Members
 team_members = [
     {"name": "Priyanka Mehta", "photo": "pages/images/priyanka.jpg", "linkedin": "https://www.linkedin.com/in/priyanka-mehta-92339a355", "twitter": "https://x.com/priyankammehta", "github": "https://github.com/priyankamehta1811"},
-    {"name": "Balendu Upmanyu", "photo": "pages/images/balendu.jpg", "linkedin": "https://www.linkedin.com/in/balendu-upmanyu-64b684217", "twitter": "", "github": "#"},
-    {"name": "Keerti Aswin", "photo": "pages/images/aswin.jpg", "linkedin": "#", "twitter": "https://x.com/keerthic_aswin", "github": "#"},
+    {"name": "Balendu Upmanyu", "photo": "pages/images/Balendu.jpg", "linkedin": "https://www.linkedin.com/in/balendu-upmanyu-64b684217", "twitter": "", "github": "#"},
+    {"name": "Keerti Aswin", "photo": "pages/images/Aswin.jpg", "linkedin": "#", "twitter": "https://x.com/keerthic_aswin", "github": "#"},
     {"name": "Jyoti Soni", "photo": "pages/images/jyoti.jpg", "linkedin": "#", "twitter": "https://x.com/Sonijyoti63", "github": "#"},
     {"name": "Raj Rajeshwar Chowdhry", "photo": "pages/images/jyoti.jpg", "linkedin": "#", "twitter": "#", "github": "#"},
 ]
