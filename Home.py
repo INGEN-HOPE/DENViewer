@@ -17,8 +17,10 @@ st.set_page_config(
 # App content
 st.markdown("<h1 style='text-align: center;'>Welcome to DENViewer</h1>", unsafe_allow_html=True)
 # Add logo (replace with your image path)
-st.sidebar.image("pages/images/lab_logo.png", use_container_width=True)
 
+
+st.sidebar.image("pages/images/lab_logo.png", use_container_width=True)
+st.sidebar.markdown('<p class="sidebar-title">DENViewer</p>', unsafe_allow_html=True)
 
 # Sidebar customization
 st.sidebar.markdown(
