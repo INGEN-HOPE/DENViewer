@@ -70,20 +70,18 @@ team_lead = {
 # Team Members
 team_members1 = [
     {"name": "Varsha Ravi", "photo": "pages/images/varsha.jpeg", "linkedin": "https://www.linkedin.com/in/varsha-ravi-818526107", "twitter": "https://x.com/varsha_ravi_", "github": "#"},
-    {"name": "M D Imran", "photo": "pages/images/imran.jpg", "linkedin": "#", "twitter": "#", "github": "#"},
+    {"name": "Dr M D Imran", "photo": "pages/images/imran.jpg", "linkedin": "#", "twitter": "#", "github": "#"},
     {"name": "Ramakant Mohite", "photo": "pages/images/rama.jpg", "linkedin": "https://www.linkedin.com/in/ramakant-mohite-42875a212", "twitter": "https://x.com/mohite_ramakant", "github": "#"},
     {"name": "Jyoti Soni", "photo": "pages/images/jyoti.jpg", "linkedin": "#", "twitter": "https://x.com/Sonijyoti63", "github": "#"},
-
+ #  {"name": "Talibhu", "photo": "pages/images/", "linkedin": "#", "twitter": "#", "github": "#"},
+ #  {"name": "Ayesha", "photo": "pages/images/", "linkedin": "#", "twitter": "#", "github": "#"},
 ]
 
 team_members2 = [
-    {"name": "Priyanka Mehta", "photo": "pages/images/priyanka.jpg", "linkedin": "https://www.linkedin.com/in/priyanka-mehta-92339a355", "twitter": "https://x.com/priyankammehta", "github": "https://github.com/priyankamehta1811"},  
+    {"name": "Priyanka Mehta", "photo": "pages/images/priyanka.jpg", "linkedin": "https://www.linkedin.com/in/priyanka-mehta-92339a355", "twitter": "https://x.com/priyankammehta", "github": "https://github.com/priyankamehta1811"},   
     {"name": "Balendu Upmanyu", "photo": "pages/images/Balendu.jpg", "linkedin": "https://www.linkedin.com/in/balendu-upmanyu-64b684217", "twitter": "#", "github": "#"},
     {"name": "Keerti Aswin", "photo": "pages/images/Aswin.jpg", "linkedin": "#", "twitter": "https://x.com/keerthic_aswin", "github": "#"},
     {"name": "Raj Rajeshwar Choudhury", "photo": "pages/images/raj.jpeg", "linkedin": "www.linkedin.com/in/raj-rajeshwar-choudhury-935228194", "twitter": "https://x.com/raj_bitmap", "github": "https://github.com/rajswimd"},
- #   {"name": "Talibhu", "photo": "pages/images/", "linkedin": "#", "twitter": "#", "github": "#"},
- #   {"name": "Ayesha", "photo": "pages/images/", "linkedin": "#", "twitter": "#", "github": "#"},
-     
 ]
      
 # Custom CSS for Proper Vertical Alignment
@@ -132,18 +130,18 @@ for i in range(1):
             st.markdown('</div>', unsafe_allow_html=True)
 
 # Additional information or contact can go here
-st.markdown("""
-    Genomic Surveillance Team
-""")
+
 # Horizontal Divider
 st.markdown("---")
-
+st.markdown("""
+    ### Genomic Surveillance Team
+""")
 # Display Other Team Members in Rows of 3
 for i in range(0, len(team_members1), 3):
     cols = st.columns(3)
     
     for j in range(3):
-        if i + j < len(team_members):
+        if i + j < len(team_members1):
             member = team_members1[i + j]
             with cols[j]:
                 st.markdown('<div class="team-container">', unsafe_allow_html=True)
@@ -162,9 +160,11 @@ for i in range(0, len(team_members1), 3):
 
                 st.markdown('</div>', unsafe_allow_html=True)
 
-# Additional information or contact can go here
+
+#barrier
+st.markdown("---")
 st.markdown("""
-    Dashboard Designing Team
+    ### Dashboard Designing Team
 """)
 
 # Display Other Team Members in Rows of 3
@@ -172,7 +172,7 @@ for i in range(0, len(team_members2), 3):
     cols = st.columns(3)
     
     for j in range(3):
-        if i + j < len(team_members):
+        if i + j < len(team_members2):
             member = team_members2[i + j]
             with cols[j]:
                 st.markdown('<div class="team-container">', unsafe_allow_html=True)
@@ -192,17 +192,15 @@ for i in range(0, len(team_members2), 3):
                 st.markdown('</div>', unsafe_allow_html=True)
 
 
+st.markdown("---")
 # Additional information or contact can go here
-st.markdown("""
-    Feel free to reach out to us for any inquiries or collaborations. We appreciate your interest in our work!
-""")
-
 
 
 st.header(":mailbox: Get In Touch With US!")
-st.markdown(" ### To contribute to the dashboard:")
 
-
+st.markdown("""
+    ##### Feel free to reach out to us for any queries or collaborations. We appreciate your interest in our work!
+""")
 #Contact form
 contact_form = """
     <form class="contact-form" action="https://formsubmit.co/priyanka.m@igib.in" method="POST">
@@ -231,7 +229,7 @@ st.markdown(
     """
     <hr>
     <p style='text-align: center;'>
-    © 2024 Rajesh Pandey| Ingen-hope Lab
+    © 2024 Rajesh Pandey | Ingen-hope Lab
     </p>
     """,
     unsafe_allow_html=True
