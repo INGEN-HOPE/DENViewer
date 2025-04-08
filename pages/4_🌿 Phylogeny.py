@@ -88,7 +88,7 @@ y_positions = {}
 x_positions = {}
 y_offset = 0
 
-@st.cache_data
+
 def assign_positions(node, depth=0):
     global y_offset
     if node.is_leaf():
