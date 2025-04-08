@@ -68,21 +68,24 @@ team_lead = {
 }
 
 # Team Members
-team_members = [
+team_members1 = [
     {"name": "Varsha Ravi", "photo": "pages/images/varsha.jpeg", "linkedin": "https://www.linkedin.com/in/varsha-ravi-818526107", "twitter": "https://x.com/varsha_ravi_", "github": "#"},
     {"name": "M D Imran", "photo": "pages/images/imran.jpg", "linkedin": "#", "twitter": "#", "github": "#"},
     {"name": "Ramakant Mohite", "photo": "pages/images/rama.jpg", "linkedin": "https://www.linkedin.com/in/ramakant-mohite-42875a212", "twitter": "https://x.com/mohite_ramakant", "github": "#"},
     {"name": "Jyoti Soni", "photo": "pages/images/jyoti.jpg", "linkedin": "#", "twitter": "https://x.com/Sonijyoti63", "github": "#"},
-    {"name": "Priyanka Mehta", "photo": "pages/images/priyanka.jpg", "linkedin": "https://www.linkedin.com/in/priyanka-mehta-92339a355", "twitter": "https://x.com/priyankammehta", "github": "https://github.com/priyankamehta1811"}   
-    {"name": "Balendu Upmanyu", "photo": "pages/images/Balendu.jpg", "linkedin": "https://www.linkedin.com/in/balendu-upmanyu-64b684217", "twitter": "#", "github": "#"},
-    {"name": "Keerti Aswin", "photo": "pages/images/Aswin.jpg", "linkedin": "#", "twitter": "https://x.com/keerthic_aswin", "github": "#"},
-    {"name": "Raj Rajeshwar Choudhury", "photo": "pages/images/raj.jpeg", "linkedin": "www.linkedin.com/in/raj-rajeshwar-choudhury-935228194", "twitter": "https://x.com/raj_bitmap", "github": "https://github.com/rajswimd
-
 "},
  #   {"name": "Talibhu", "photo": "pages/images/", "linkedin": "#", "twitter": "#", "github": "#"},
  #   {"name": "Ayesha", "photo": "pages/images/", "linkedin": "#", "twitter": "#", "github": "#"},
 ]
 
+team_members2 = [
+    {"name": "Priyanka Mehta", "photo": "pages/images/priyanka.jpg", "linkedin": "https://www.linkedin.com/in/priyanka-mehta-92339a355", "twitter": "https://x.com/priyankammehta", "github": "https://github.com/priyankamehta1811"}   
+    {"name": "Balendu Upmanyu", "photo": "pages/images/Balendu.jpg", "linkedin": "https://www.linkedin.com/in/balendu-upmanyu-64b684217", "twitter": "#", "github": "#"},
+    {"name": "Keerti Aswin", "photo": "pages/images/Aswin.jpg", "linkedin": "#", "twitter": "https://x.com/keerthic_aswin", "github": "#"},
+    {"name": "Raj Rajeshwar Choudhury", "photo": "pages/images/raj.jpeg", "linkedin": "www.linkedin.com/in/raj-rajeshwar-choudhury-935228194", "twitter": "https://x.com/raj_bitmap", "github": "https://github.com/rajswimd
+"},
+]
+     
 # Custom CSS for Proper Vertical Alignment
 st.markdown(
     """
@@ -128,16 +131,49 @@ for i in range(1):
 
             st.markdown('</div>', unsafe_allow_html=True)
 
+# Additional information or contact can go here
+st.markdown("""
+    Genomic Surveillance Team
+""")
 # Horizontal Divider
 st.markdown("---")
 
 # Display Other Team Members in Rows of 3
-for i in range(0, len(team_members), 3):
+for i in range(0, len(team_members1), 3):
     cols = st.columns(3)
     
     for j in range(3):
         if i + j < len(team_members):
-            member = team_members[i + j]
+            member = team_members1[i + j]
+            with cols[j]:
+                st.markdown('<div class="team-container">', unsafe_allow_html=True)
+                
+                # Image (Centered)
+                st.image(member["photo"], width=300, output_format="PNG")
+
+                # Name (Centered)
+                st.markdown(f'<p class="team-name">{member["name"]}</p>', unsafe_allow_html=True)
+
+                # Social Media Links (Centered)
+                social_links = [link for link in [member["linkedin"], member["twitter"], member["github"]] if link and link != "#"]
+                if social_links:
+                    social_media_icons = SocialMediaIcons(social_links)
+                    social_media_icons.render()
+
+                st.markdown('</div>', unsafe_allow_html=True)
+
+# Additional information or contact can go here
+st.markdown("""
+    Dashboard Designing Team
+""")
+
+# Display Other Team Members in Rows of 3
+for i in range(0, len(team_members2), 3):
+    cols = st.columns(3)
+    
+    for j in range(3):
+        if i + j < len(team_members):
+            member = team_members2[i + j]
             with cols[j]:
                 st.markdown('<div class="team-container">', unsafe_allow_html=True)
                 
