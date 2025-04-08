@@ -73,17 +73,17 @@ team_members1 = [
     {"name": "M D Imran", "photo": "pages/images/imran.jpg", "linkedin": "#", "twitter": "#", "github": "#"},
     {"name": "Ramakant Mohite", "photo": "pages/images/rama.jpg", "linkedin": "https://www.linkedin.com/in/ramakant-mohite-42875a212", "twitter": "https://x.com/mohite_ramakant", "github": "#"},
     {"name": "Jyoti Soni", "photo": "pages/images/jyoti.jpg", "linkedin": "#", "twitter": "https://x.com/Sonijyoti63", "github": "#"},
-"},
- #   {"name": "Talibhu", "photo": "pages/images/", "linkedin": "#", "twitter": "#", "github": "#"},
- #   {"name": "Ayesha", "photo": "pages/images/", "linkedin": "#", "twitter": "#", "github": "#"},
+
 ]
 
 team_members2 = [
-    {"name": "Priyanka Mehta", "photo": "pages/images/priyanka.jpg", "linkedin": "https://www.linkedin.com/in/priyanka-mehta-92339a355", "twitter": "https://x.com/priyankammehta", "github": "https://github.com/priyankamehta1811"}   
+    {"name": "Priyanka Mehta", "photo": "pages/images/priyanka.jpg", "linkedin": "https://www.linkedin.com/in/priyanka-mehta-92339a355", "twitter": "https://x.com/priyankammehta", "github": "https://github.com/priyankamehta1811"},  
     {"name": "Balendu Upmanyu", "photo": "pages/images/Balendu.jpg", "linkedin": "https://www.linkedin.com/in/balendu-upmanyu-64b684217", "twitter": "#", "github": "#"},
     {"name": "Keerti Aswin", "photo": "pages/images/Aswin.jpg", "linkedin": "#", "twitter": "https://x.com/keerthic_aswin", "github": "#"},
-    {"name": "Raj Rajeshwar Choudhury", "photo": "pages/images/raj.jpeg", "linkedin": "www.linkedin.com/in/raj-rajeshwar-choudhury-935228194", "twitter": "https://x.com/raj_bitmap", "github": "https://github.com/rajswimd
-"},
+    {"name": "Raj Rajeshwar Choudhury", "photo": "pages/images/raj.jpeg", "linkedin": "www.linkedin.com/in/raj-rajeshwar-choudhury-935228194", "twitter": "https://x.com/raj_bitmap", "github": "https://github.com/rajswimd"},
+ #   {"name": "Talibhu", "photo": "pages/images/", "linkedin": "#", "twitter": "#", "github": "#"},
+ #   {"name": "Ayesha", "photo": "pages/images/", "linkedin": "#", "twitter": "#", "github": "#"},
+     
 ]
      
 # Custom CSS for Proper Vertical Alignment
