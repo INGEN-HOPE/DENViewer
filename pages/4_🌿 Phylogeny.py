@@ -63,7 +63,7 @@ st.markdown(
 
 st.title("Phylogenetic Tree")
 
-st.markdown("""Some visualizations may take time to load due to the complexity of the data. Please be patient while the plots generate.""")
+st.markdown(""" Disclaimer: Some visualizations may take time to load due to the complexity of the data. Please be patient while the plots generate.""")
 # Load the metadata
 metadata_file = "pages/files/all_clade.csv"
 metadata = pd.read_csv(metadata_file)
@@ -88,6 +88,7 @@ y_positions = {}
 x_positions = {}
 y_offset = 0
 
+@st.cache_data
 def assign_positions(node, depth=0):
     global y_offset
     if node.is_leaf():
