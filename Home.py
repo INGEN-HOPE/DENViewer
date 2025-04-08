@@ -16,7 +16,33 @@ st.set_page_config(
 
 # App content
 st.markdown("<h1 style='text-align: center;'>Welcome to DENViewer</h1>", unsafe_allow_html=True)
+# Add logo (replace with your image path)
+st.sidebar.image("pages/images/lab_logo.png", use_container_width=True)
 
+
+# Sidebar customization
+st.sidebar.markdown(
+    """
+    <style>
+        .sidebar-title {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            color: "white";
+            margin-bottom: 10px;
+        }
+        .sidebar-logo {
+            display: block;
+            margin: 0 auto;
+            width: 150px;  /* Adjust size as needed */
+            border-radius: 10px;
+        }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+# Optional: Add a separator for aesthetics
+st.sidebar.markdown("---")
 #st.image("pages/images/background.webp", caption="created using DALL.E")
 
 #Description
