@@ -50,12 +50,14 @@ st.sidebar.markdown("---")
 #Description
 st.markdown(
         """
-        <p class='sub-header' style='text-align: justify;'>
+        <p class='sub-header' style='text-align: justify;'><
+        
+        font size=1
         Genomic surveillance plays a critical role in understanding and controlling dengue virus outbreaks. Explore the Dengue Genomic Surveillance Dashboard to dive into real-time sequencing data and trends! 🚀
 
-        an interactive platform showcasing genomic insights from over 4,000 dengue virus genomes sequenced using Oxford Nanopore Technology for 2022-2023 at [INGEN-HOPE Lab](https://ingen-hope.github.io/). This active surveillance effort focuses on hospital-admitted patients in the Delhi NCR region, providing a real-time view of dengue virus evolution, serotype distribution, and emerging genomic patterns.
+        an interactive platform showcasing genomic insights from over 4,000 dengue virus genomes sequenced using NGS platforms for 2022-2023 at [INGEN-HOPE Lab](https://ingen-hope.github.io/). This active surveillance effort focuses on hospital-admitted patients in the Delhi NCR region, providing a real-time view of dengue virus evolution, serotype distribution, and emerging genomic patterns.
 
-        This dashboard serves as for exploration of  researchers, clinicians, and public health officials can explore serotype prevalence, lineage dynamics, and geographical trends, aiding in a deeper understanding of the ongoing dengue epidemic. Stay informed with data-driven insights to support surveillance, outbreak preparedness, and public health interventions.
+        This dashboard serves for the exploration of researchers, clinicians, and public health officials to explore serotype prevalence, lineage dynamics, and geographical trends, aiding in a deeper understanding of the ongoing dengue epidemic. Stay informed with data-driven insights to support surveillance, outbreak preparedness, and public health interventions.
         </p>
         """,
         unsafe_allow_html=True
@@ -97,9 +99,9 @@ fig2.update_layout(
 col1, col2 = st.columns((1.5,5), gap='medium')
 
 with col1:
-    st.markdown('#### In-House Dengue Surveillance Stats')
+    st.markdown('#### In-House Dengue Genome Surveillance Stats')
     
-    ui.metric_card(title="Total Genomes Sequences", content=f"{total_samples}", description="2022-2023")
+    ui.metric_card(title="Total Genomes Sequenced", content=f"{total_samples}", description="2022-2023")
     
     df_gen = df2.dropna(subset=["Gender", "Severity"])  
 
@@ -160,7 +162,7 @@ with col2:
         y="Location",
         size="Count",
         color="Location",
-        title="Country-wise Dengue Surveillance",
+        title="Country-wise Dengue Genome Surveillance",
         height=800, width= 800,
         opacity =1,
         )
@@ -188,7 +190,7 @@ with col2:
         st.plotly_chart(fig2, use_container_width=True)
 
     with sub_col2:
-        st.markdown('#### Top Indian States')
+        st.markdown('#### Case and Death Reports in Indian States')
 
         year_list = list(df3.Year.unique())[::-1]
         selected_year = st.selectbox('Select a year', year_list, index=0)
