@@ -140,7 +140,7 @@ with st.expander('About', expanded=True):
             - **Mild**: Dengue without warning signs (normal platelet & leukocyte counts)
             - **Moderate**: Dengue with warning signs (normal platelet, decreased leukocytes)
             - **Severe**: Dengue with thrombocytopenia (low platelets & leukocytes)
-        - :orange[**Sequencing platform**]: Oxford Nanopore Technology
+   
     ''')
 
 # Footer
