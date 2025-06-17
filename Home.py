@@ -50,9 +50,8 @@ st.sidebar.markdown("---")
 #Description
 st.markdown(
         """
-        <p class='sub-header' style='text-align: justify font size=1;'>< 
-        
-       
+        <p class='sub-header' style='text-align: justify;'>< 
+              
         Genomic surveillance plays a critical role in understanding and controlling dengue virus outbreaks. Explore the Dengue Genomic Surveillance Dashboard to dive into real-time sequencing data and trends! 🚀
 
         an interactive platform showcasing genomic insights from over 4,000 dengue virus genomes sequenced using NGS platforms for 2022-2023 at [INGEN-HOPE Lab](https://ingen-hope.github.io/). This active surveillance effort focuses on hospital-admitted patients in the Delhi NCR region, providing a real-time view of dengue virus evolution, serotype distribution, and emerging genomic patterns.
