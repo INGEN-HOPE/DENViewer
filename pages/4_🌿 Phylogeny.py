@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 from ete3 import Tree
 import plotly.graph_objects as go
+from plotly.graph_objects import Scattergl
 
 # Set Streamlit page config
 st.set_page_config(
@@ -65,10 +66,12 @@ st.title("Phylogenetic Tree")
 
 st.markdown(""" Disclaimer: Some visualizations may take time to load due to the complexity of the data. Please be patient while the plots generate.""")
 # Load the metadata
-metadata_file = "pages/files/all_clade.csv"
-metadata = pd.read_csv(metadata_file)
-metadata.columns = metadata.columns.str.strip()
-
+@st.cache_data
+def load_metadata():
+    metadata_file = "pages/files/all_clade.csv"
+    metadata = pd.read_csv(metadata_file)
+    metadata.columns = metadata.columns.str.strip()
+    return metadata
 # Let the user select the metadata column for coloring
 selected_column = st.selectbox("Select metadata column for coloring:", metadata.columns, index=2)
 
@@ -113,14 +116,14 @@ for node in tree.traverse():
     if not node.is_root():
         parent = node.up
         if parent in x_positions and node in x_positions:
-            fig.add_trace(go.Scatter(
+            fig.add_trace(go.Scattergl(
                 x=[x_positions[parent], x_positions[parent]],
                 y=[y_positions[parent], y_positions[node]],
                 mode="lines",
                 line=dict(color="black", width=1),
                 showlegend=False
             ))
-            fig.add_trace(go.Scatter(
+            fig.add_trace(go.Scattergl(
                 x=[x_positions[parent], x_positions[node]],
                 y=[y_positions[node], y_positions[node]],
                 mode="lines",
@@ -139,7 +142,7 @@ for leaf in tree.iter_leaves():
     else:
         continue
 
-    trace = go.Scatter(
+    trace = go.Scattergl(
     x=[x_positions[leaf]],
     y=[y_positions[leaf]],
     mode="markers",
