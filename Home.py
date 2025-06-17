@@ -50,7 +50,7 @@ st.sidebar.markdown("---")
 #Description
 st.markdown(
         """
-        <p class='sub-header' style='text-align: justify;'>< 
+        <p class='sub-header' style='text-align: justify;'>
               
         Genomic surveillance plays a critical role in understanding and controlling dengue virus outbreaks. Explore the Dengue Genomic Surveillance Dashboard to dive into real-time sequencing data and trends! 🚀
 
